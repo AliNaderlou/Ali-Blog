@@ -1,5 +1,5 @@
 import React from 'react';
-import './profile-info.sass';
+import './styles/profile-info.scss';
 function Profile_Info() {
   return (
     <section className="profile-info-container">
