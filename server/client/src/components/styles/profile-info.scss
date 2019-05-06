@@ -1,33 +1,61 @@
+@import '../../styles/_mq';
 .profile-info-container {
-  background-color: #232323;
+  background-color: #333333;
   color: white;
   width: 280px;
   height: 100%;
-  .user-image-container {
-    text-align: center;
-    padding-top: 1em;
-    img {
-      height: 10em;
-      width: 10em;
-      border-radius: 50%;
-      border: 2px tomato solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @include mq($from: mobile, $until: tablet) {
+    width: 100%;
+  }
+  .profile-body {
+    .user-image-container {
+      text-align: center;
+      padding-top: 1em;
+      img {
+        height: 12em;
+        width: 12em;
+        border-radius: 50%;
+      }
+    }
+    .user-about-container {
+      padding: 0 1em;
+      text-align: center;
+      direction: rtl;
+      font-family: 'Amithen';
+      h1 {
+        font-size: 1.8em;
+        font-weight: normal;
+        margin: 12px 0;
+      }
+      h2 {
+        font-size: 1.4em;
+        font-weight: normal;
+        margin: 12px 0;
+      }
+    }
+    .user-quote-container {
+      text-align: center;
+      margin-top: 2.4em;
+      font-size: 1.4em;
+      font-family: 'Amithen';
+      padding: 0 0.4em;
     }
   }
-  .user-about-container {
-    padding: 0 1em;
-    text-align: center;
-    direction: rtl;
-   h1{
-    font-family: 'Amithen';
-     font-size: 1.8em;
-     font-weight: normal;
-     margin: 12px 0;
-   }
-   h2{
-    font-family: 'Amithen';
-    font-size: 1.4em;
-    font-weight: normal;
-    margin: 12px 0;
-   }
+  .user-social-medias-container {
+    ul {
+      list-style: none;
+      display: flex;
+      text-align: center;
+      justify-content: space-between;
+      font-size: 1.95em;
+      margin: 0;
+      padding: .4em .45em;
+      @include mq($from: mobile, $until: tablet) {
+        padding: .4em .85em;
+      }
+    }
   }
 }
