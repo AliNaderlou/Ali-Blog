@@ -1,0 +1,10 @@
+html,
+body,
+#root {
+  height: 100%;
+}
+@font-face {
+    font-family: "Amithen";
+    src: url("/fonts/Amithen.otf") format("OpenType"),
+         url("/fonts/Amithen.ttf") format("truetype");
+  }

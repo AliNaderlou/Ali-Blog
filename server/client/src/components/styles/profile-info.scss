@@ -1,0 +1,33 @@
+.profile-info-container {
+  background-color: #232323;
+  color: white;
+  width: 280px;
+  height: 100%;
+  .user-image-container {
+    text-align: center;
+    padding-top: 1em;
+    img {
+      height: 10em;
+      width: 10em;
+      border-radius: 50%;
+      border: 2px tomato solid;
+    }
+  }
+  .user-about-container {
+    padding: 0 1em;
+    text-align: center;
+    direction: rtl;
+   h1{
+    font-family: 'Amithen';
+     font-size: 1.8em;
+     font-weight: normal;
+     margin: 12px 0;
+   }
+   h2{
+    font-family: 'Amithen';
+    font-size: 1.4em;
+    font-weight: normal;
+    margin: 12px 0;
+   }
+  }
+}

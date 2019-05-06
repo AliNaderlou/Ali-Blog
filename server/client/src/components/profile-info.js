@@ -7,17 +7,15 @@ function Profile_Info() {
         <img src="images/profile.jpg" alt="Ali Naderlou" />
       </div>
       <div className="user-about-container">
-        <p>
-          Amet anim fugiat cillum tempor dolore dolor quis qui aliquip laboris
-          consequat commodo ea consequat.
-        </p>
+        <h1>Ali Naderlou</h1>
+        <h2>Full stack web developer</h2>
       </div>
       <div className="user-social-medias-container">
         <ul>
-        <li>Instagram</li>
-        <li>Facebook</li>
-        <li>Twitter</li>
-        <li>Linkedin</li>
+          <li><i class="fab fa-instagram"></i></li>
+          <li>Facebook</li>
+          <li>Twitter</li>
+          <li>Linkedin</li>
         </ul>
       </div>
     </section>
