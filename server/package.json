@@ -4,9 +4,9 @@
   "description": "My personal blog",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "server": "nodemon index.js",
     "client": "npm run start --prefix client",
-    "dev": "concurrently \"npm run start\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Ali Naderlou",
   "license": "ISC",
