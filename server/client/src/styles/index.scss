@@ -1,4 +1,3 @@
-
 html,
 body,
 #root {
@@ -8,4 +7,17 @@ body,
   font-family: 'Amithen';
   src: url('/fonts/Amithen.otf') format('OpenType'),
     url('/fonts/Amithen.ttf') format('truetype');
+}
+::-moz-selection {
+  background: #900048;
+}
+::selection {
+  background: #900048;
+}
+.unselectable {
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
 }

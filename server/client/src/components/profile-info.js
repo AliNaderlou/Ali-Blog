@@ -4,7 +4,7 @@ function Profile_Info() {
   return (
     <section className="profile-info-container">
       <div className="profile-body">
-        <div className="user-image-container">
+        <div className="user-image-container unselectable">
           <img src="images/profile.jpg" alt="Ali Naderlou" />
         </div>
         <div className="user-about-container">
@@ -19,20 +19,50 @@ function Profile_Info() {
       </div>
       <div className="user-social-medias-container">
         <ul>
-          <li>
-            <i className="fab fa-telegram" />
+          <li className="telegram">
+            <a
+              href="https://telegram.me/AliNaderlou"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <i className="fab fa-telegram" />
+            </a>
           </li>
-          <li>
-            <i className="fab fa-instagram" />
+          <li className="instagram">
+            <a
+              href="https://instagram.com/Ali_Naderlou"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <i className="fab fa-instagram" />
+            </a>
           </li>
-          <li>
-            <i className="fab fa-facebook" />
+          <li className="facebook">
+            <a
+              href="https://www.facebook.com/AliNaderloo77"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <i className="fab fa-facebook" />
+            </a>
           </li>
-          <li>
-            <i className="fab fa-twitter" />
+          <li className="twitter">
+            <a
+              href="https://www.twitter.com/AliNaderlou"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <i className="fab fa-twitter" />
+            </a>
           </li>
-          <li>
-            <i className="fab fa-linkedin" />
+          <li className="likedin">
+            <a
+              href="https://www.linkedin.com/in/ali-naderlou-3692bb129/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <i className="fab fa-linkedin" />
+            </a>
           </li>
         </ul>
       </div>

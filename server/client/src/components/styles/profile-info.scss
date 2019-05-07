@@ -23,7 +23,6 @@
     .user-about-container {
       padding: 0 1em;
       text-align: center;
-      direction: rtl;
       font-family: 'Amithen';
       h1 {
         font-size: 1.8em;
@@ -52,9 +51,15 @@
       justify-content: space-between;
       font-size: 1.95em;
       margin: 0;
-      padding: .4em .45em;
+      padding: 0.4em 0.45em;
       @include mq($from: mobile, $until: tablet) {
-        padding: .4em .85em;
+        padding: 0.4em 0.85em;
+      }
+      li {
+        a {
+          text-decoration: none;
+          color: white;
+        }
       }
     }
   }
