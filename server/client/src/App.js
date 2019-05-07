@@ -4,12 +4,12 @@ import './styles/fontawesome.css';
 import './styles/fontawesome-brands.css';
 import './styles/normalize.scss';
 import './styles/index.scss';
-import Profile_Info from './components/profile-info';
+import Profile from './components/profile';
 
 
 function App() {
   return (
-    <Profile_Info />
+    <Profile />
   );
 }
 

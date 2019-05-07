@@ -1,6 +1,6 @@
 import React from 'react';
-import './styles/profile-info.scss';
-function Profile_Info() {
+import './styles/profile.scss';
+function Profile() {
   return (
     <section className="profile-info-container">
       <div className="profile-body">
@@ -70,4 +70,4 @@ function Profile_Info() {
   );
 }
 
-export default Profile_Info;
+export default Profile;
