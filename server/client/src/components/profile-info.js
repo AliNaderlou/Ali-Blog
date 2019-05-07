@@ -9,7 +9,7 @@ function Profile_Info() {
         </div>
         <div className="user-about-container">
           <h1>Ali Naderlou</h1>
-          <h2>Full stack web developer</h2>
+          <h2>full stack web developer</h2>
         </div>
         <div className="user-quote-container">
           <p>
