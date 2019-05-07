@@ -20,19 +20,19 @@ function Profile_Info() {
       <div className="user-social-medias-container">
         <ul>
           <li>
-            <i class="fab fa-telegram" />
+            <i className="fab fa-telegram" />
           </li>
           <li>
-            <i class="fab fa-instagram" />
+            <i className="fab fa-instagram" />
           </li>
           <li>
-            <i class="fab fa-facebook" />
+            <i className="fab fa-facebook" />
           </li>
           <li>
-            <i class="fab fa-twitter" />
+            <i className="fab fa-twitter" />
           </li>
           <li>
-            <i class="fab fa-linkedin" />
+            <i className="fab fa-linkedin" />
           </li>
         </ul>
       </div>
