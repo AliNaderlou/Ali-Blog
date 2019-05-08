@@ -2,7 +2,7 @@ import React from 'react';
 import './styles/profile.scss';
 function Profile() {
   return (
-    <section className="profile-info-container">
+    <section className="profile-info-container box-shadow">
       <div className="profile-body">
         <div className="user-image-container unselectable">
           <img src="images/profile.jpg" alt="Ali Naderlou" />

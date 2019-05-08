@@ -1,8 +1,9 @@
 @import '../../styles/_mq';
+@import '../../styles/_globals';
 .profile-info-container {
-  background-color: #333333;
+  background-color: $primary-color;
   color: white;
-  width: 310px;
+  width: 410px;
   height: 100%;
   display: flex;
   flex-direction: column;
