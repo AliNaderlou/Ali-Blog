@@ -1,3 +1,4 @@
+@import './_globals';
 html,
 body,
 #root {
@@ -9,10 +10,10 @@ body,
     url('/fonts/Amithen.ttf') format('truetype');
 }
 ::-moz-selection {
-  background: #900048;
+  background: $accent-color;
 }
 ::selection {
-  background: #900048;
+  background: $accent-color;
 }
 .unselectable {
   user-select: none;
@@ -20,4 +21,10 @@ body,
   -khtml-user-select: none;
   -webkit-user-select: none;
   -o-user-select: none;
+}
+#root {
+  display: flex;
+}
+.box-shadow{
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
