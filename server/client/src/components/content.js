@@ -1,14 +1,26 @@
 import React from 'react';
 import WorkSample from './work-sample';
 import './styles/content.scss';
-function Content() {
+function Content(props) {
   return (
     <section className="content-container">
-      <header className="box-shadow">
+      <header className="box-shadow unselectable">
         <div className="title">Portfolio</div>
-        <i className="icon fas fa-angle-up" />
+        <i
+          onClick={props.onPortfolioToggleClick}
+          className={
+            props.showPortfolio
+              ? 'icon fas fa-angle-up'
+              : 'icon fas fa-angle-down'
+          }
+        />
       </header>
-      <section className="portfolio-container">
+      <section
+        className={
+          'portfolio-container ' +
+          (props.showPortfolio ? '' : 'hide-visibility')
+        }
+      >
         <section className="portfolio-col1">
           <WorkSample
             text="Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
@@ -64,7 +76,7 @@ function Content() {
             title="Instagram Schaduler"
             image="images/The-Last-of-Us-2.jpg"
           />
-        
+
           <WorkSample
             text="Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
         culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
@@ -103,7 +115,7 @@ function Content() {
             title="Instagram Schaduler"
             image="images/screenshot.png"
           />
-            <WorkSample
+          <WorkSample
             text="Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
         culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
         deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
