@@ -14,7 +14,7 @@ function Profile() {
         <div className="user-quote-container">
           <p>
             “The only way to do great work is to love what you do.”
-            <br/> – Steve Jobs
+             - Steve Jobs
           </p>
         </div>
       </div>

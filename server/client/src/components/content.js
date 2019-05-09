@@ -1,10 +1,11 @@
 import React from 'react';
 import WorkSample from './work-sample';
 import './styles/content.scss';
+let width = window.innerWidth;
 function Content(props) {
   return (
     <section className="content-container">
-      <header className="box-shadow unselectable">
+      <div className="header box-shadow unselectable">
         <div className="title">Portfolio</div>
         <i
           onClick={props.onPortfolioToggleClick}
@@ -14,117 +15,221 @@ function Content(props) {
               : 'icon fas fa-angle-down'
           }
         />
-      </header>
+      </div>
       <section
-        className={
-          'portfolio-container ' +
-          (props.showPortfolio ? '' : 'hide-visibility')
-        }
+        className={'portfolio-container ' + (props.showPortfolio ? '' : 'hide')}
       >
-        <section className="portfolio-col1">
-          <WorkSample
-            text="Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
-            culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
-            deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
-            Labore occaecat non occaecat proident magna nulla anim ullamco in
-            adipisicing. Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
-            culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
-            deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
-            Labore occaecat non occaecat proident magna nulla anim ullamco in
-            adipisicing.Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
-            culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
-            deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
-            Labore occaecat non occaecat proident magna nulla anim ullamco in
-            adipisicing. Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
-            culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
-            deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
-            Labore occaecat non occaecat proident magna nulla anim ullamco in
-            adipisicing.Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
-            culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
-            deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
-            Labore occaecat non occaecat proident magna nulla anim ullamco in
-            adipisicing. Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
-            culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
-            deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
-            Labore occaecat non occaecat proident magna nulla anim ullamco in
-            adipisicing.Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
-            culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
-            deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
-            Labore occaecat non occaecat proident magna nulla anim ullamco in
-            adipisicing. Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
-            culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
-            deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
-            Labore occaecat non occaecat proident magna nulla anim ullamco in
-            adipisicing.Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
-            culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
-            deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
-            Labore occaecat non occaecat proident magna nulla anim ullamco in
-            adipisicing. Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
-            culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
-            deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
-            Labore occaecat non occaecat proident magna nulla anim ullamco in
-            adipisicing. Quis consequat est cupidatat aliquip cillum in adipisicing eu nostrud elit. Officia commodo voluptate minim consequat dolor aute nostrud fugiat ea laborum voluptate dolore. Dolore commodo cillum consectetur anim dolor ut pariatur cupidatat fugiat sint. Qui labore irure ad Lorem qui non non labore exercitation consectetur."
-            title="Instagram Schaduler"
-            image="images/The-Last-of-Us-2.jpg"
-          />
-          <WorkSample
-            text="Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
-        culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
-        deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
-        Labore occaecat non occaecat proident magna nulla anim ullamco in
-        adipisicing. Incididunt veniam excepteur consectetur tempor qui nisi sint laboris deserunt irure sit mollit."
-            title="Instagram Schaduler"
-            image="images/The-Last-of-Us-2.jpg"
-          />
+        {props.windowWidth > 980 ? (
+          <React.Fragment>
+            <section className="portfolio-col1">
+              <WorkSample
+                text="Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
+          culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
+          deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
+          Labore occaecat non occaecat proident magna nulla anim ullamco in
+          adipisicing. Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
+          culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
+          deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
+          Labore occaecat non occaecat proident magna nulla anim ullamco in
+          adipisicing.Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
+          culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
+          deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
+          Labore occaecat non occaecat proident magna nulla anim ullamco in
+          adipisicing. Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
+          culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
+          deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
+          Labore occaecat non occaecat proident magna nulla anim ullamco in
+          adipisicing.Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
+          culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
+          deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
+          Labore occaecat non occaecat proident magna nulla anim ullamco in
+          adipisicing. Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
+          culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
+          deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
+          Labore occaecat non occaecat proident magna nulla anim ullamco in
+          adipisicing.Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
+          culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
+          deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
+          Labore occaecat non occaecat proident magna nulla anim ullamco in
+          adipisicing. Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
+          culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
+          deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
+          Labore occaecat non occaecat proident magna nulla anim ullamco in
+          adipisicing.Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
+          culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
+          deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
+          Labore occaecat non occaecat proident magna nulla anim ullamco in
+          adipisicing. Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
+          culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
+          deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
+          Labore occaecat non occaecat proident magna nulla anim ullamco in
+          adipisicing. Quis consequat est cupidatat aliquip cillum in adipisicing eu nostrud elit. Officia commodo voluptate minim consequat dolor aute nostrud fugiat ea laborum voluptate dolore. Dolore commodo cillum consectetur anim dolor ut pariatur cupidatat fugiat sint. Qui labore irure ad Lorem qui non non labore exercitation consectetur."
+                title="Instagram Schaduler"
+                image="images/The-Last-of-Us-2.jpg"
+              />
+              <WorkSample
+                text="Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
+      culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
+      deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
+      Labore occaecat non occaecat proident magna nulla anim ullamco in
+      adipisicing. Incididunt veniam excepteur consectetur tempor qui nisi sint laboris deserunt irure sit mollit."
+                title="Instagram Schaduler"
+                image="images/The-Last-of-Us-2.jpg"
+              />
 
-          <WorkSample
-            text="Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
-        culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
-        deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
-        Labore occaecat non occaecat proident magna nulla anim ullamco in
-        adipisicing."
-            title="Instagram Schaduler"
-            image="images/screenshot.png"
-          />
-        </section>
-        <section className="portfolio-col2">
-          <WorkSample
-            text="Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
-            culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
-            deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
-            Labore occaecat non occaecat proident magna nulla anim ullamco in
-            adipisicing."
-            title="Instagram Schaduler"
-            image="images/screenshot.png"
-          />
-          <WorkSample
-            text="Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
-            culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
-            deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
-            Labore occaecat non occaecat proident magna nulla anim ullamco in
-            adipisicing."
-            title="Instagram Schaduler"
-            image="images/screenshot.png"
-          />
-          <WorkSample
-            text="Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
-            culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
-            deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
-            Labore occaecat non occaecat proident magna nulla anim ullamco in
-            adipisicing."
-            title="Instagram Schaduler"
-            image="images/screenshot.png"
-          />
-          <WorkSample
-            text="Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
-        culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
-        deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
-        Labore occaecat non occaecat proident magna nulla anim ullamco in
-        adipisicing."
-            title="Instagram Schaduler"
-            image="images/screenshot.png"
-          />
-        </section>
+              <WorkSample
+                text="Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
+      culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
+      deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
+      Labore occaecat non occaecat proident magna nulla anim ullamco in
+      adipisicing."
+                title="Instagram Schaduler"
+                image="images/screenshot.png"
+              />
+            </section>
+            <section className="portfolio-col2">
+              <WorkSample
+                text="Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
+          culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
+          deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
+          Labore occaecat non occaecat proident magna nulla anim ullamco in
+          adipisicing."
+                title="Instagram Schaduler"
+                image="images/screenshot.png"
+              />
+              <WorkSample
+                text="Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
+          culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
+          deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
+          Labore occaecat non occaecat proident magna nulla anim ullamco in
+          adipisicing."
+                title="Instagram Schaduler"
+                image="images/screenshot.png"
+              />
+              <WorkSample
+                text="Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
+          culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
+          deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
+          Labore occaecat non occaecat proident magna nulla anim ullamco in
+          adipisicing."
+                title="Instagram Schaduler"
+                image="images/screenshot.png"
+              />
+              <WorkSample
+                text="Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
+      culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
+      deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
+      Labore occaecat non occaecat proident magna nulla anim ullamco in
+      adipisicing."
+                title="Instagram Schaduler"
+                image="images/screenshot.png"
+              />
+            </section>
+          </React.Fragment>
+        ) : (
+          <section className="portfolio">
+            <WorkSample
+              text="Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
+          culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
+          deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
+          Labore occaecat non occaecat proident magna nulla anim ullamco in
+          adipisicing. Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
+          culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
+          deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
+          Labore occaecat non occaecat proident magna nulla anim ullamco in
+          adipisicing.Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
+          culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
+          deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
+          Labore occaecat non occaecat proident magna nulla anim ullamco in
+          adipisicing. Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
+          culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
+          deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
+          Labore occaecat non occaecat proident magna nulla anim ullamco in
+          adipisicing.Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
+          culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
+          deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
+          Labore occaecat non occaecat proident magna nulla anim ullamco in
+          adipisicing. Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
+          culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
+          deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
+          Labore occaecat non occaecat proident magna nulla anim ullamco in
+          adipisicing.Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
+          culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
+          deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
+          Labore occaecat non occaecat proident magna nulla anim ullamco in
+          adipisicing. Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
+          culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
+          deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
+          Labore occaecat non occaecat proident magna nulla anim ullamco in
+          adipisicing.Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
+          culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
+          deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
+          Labore occaecat non occaecat proident magna nulla anim ullamco in
+          adipisicing. Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
+          culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
+          deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
+          Labore occaecat non occaecat proident magna nulla anim ullamco in
+          adipisicing. Quis consequat est cupidatat aliquip cillum in adipisicing eu nostrud elit. Officia commodo voluptate minim consequat dolor aute nostrud fugiat ea laborum voluptate dolore. Dolore commodo cillum consectetur anim dolor ut pariatur cupidatat fugiat sint. Qui labore irure ad Lorem qui non non labore exercitation consectetur."
+              title="Instagram Schaduler"
+              image="images/The-Last-of-Us-2.jpg"
+            />
+            <WorkSample
+              text="Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
+      culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
+      deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
+      Labore occaecat non occaecat proident magna nulla anim ullamco in
+      adipisicing. Incididunt veniam excepteur consectetur tempor qui nisi sint laboris deserunt irure sit mollit."
+              title="Instagram Schaduler"
+              image="images/The-Last-of-Us-2.jpg"
+            />
+
+            <WorkSample
+              text="Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
+      culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
+      deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
+      Labore occaecat non occaecat proident magna nulla anim ullamco in
+      adipisicing."
+              title="Instagram Schaduler"
+              image="images/screenshot.png"
+            />
+            <WorkSample
+              text="Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
+          culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
+          deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
+          Labore occaecat non occaecat proident magna nulla anim ullamco in
+          adipisicing."
+              title="Instagram Schaduler"
+              image="images/screenshot.png"
+            />
+            <WorkSample
+              text="Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
+          culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
+          deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
+          Labore occaecat non occaecat proident magna nulla anim ullamco in
+          adipisicing."
+              title="Instagram Schaduler"
+              image="images/screenshot.png"
+            />
+            <WorkSample
+              text="Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
+          culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
+          deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
+          Labore occaecat non occaecat proident magna nulla anim ullamco in
+          adipisicing."
+              title="Instagram Schaduler"
+              image="images/screenshot.png"
+            />
+            <WorkSample
+              text="Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do
+      culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiat
+      deserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.
+      Labore occaecat non occaecat proident magna nulla anim ullamco in
+      adipisicing."
+              title="Instagram Schaduler"
+              image="images/screenshot.png"
+            />
+          </section>
+        )}
       </section>
     </section>
   );

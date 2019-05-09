@@ -11,12 +11,23 @@ class App extends Component {
     super(props);
     this.state = {
       showPortfolio: true,
+      windowWidth: window.innerWidth,
     };
     this.changeShowPortfolio = this.changeShowPortfolio.bind(this);
+    this.resize = this.resize.bind(this);
+  }
+  componentDidMount() {
+    window.addEventListener('resize', this.resize.bind(this));
+    this.resize();
+  }
+  resize() {
+    this.setState((state) => {
+      return { ...state, windowWidth: window.innerWidth };
+    });
   }
   changeShowPortfolio() {
     this.setState((state) => {
-      return { showPortfolio: !state.showPortfolio };
+      return { ...state, showPortfolio: !state.showPortfolio };
     });
   }
   render() {
@@ -24,6 +35,7 @@ class App extends Component {
       <React.Fragment>
         <Profile />
         <Content
+          windowWidth={this.state.windowWidth}
           onPortfolioToggleClick={() => this.changeShowPortfolio()}
           showPortfolio={this.state.showPortfolio}
         />
