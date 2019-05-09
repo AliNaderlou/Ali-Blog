@@ -9,11 +9,12 @@ function Profile() {
         </div>
         <div className="user-about-container">
           <h1>Ali Naderlou</h1>
-          <h2>full stack web developer</h2>
+          <h2>Full Stack Web Developer</h2>
         </div>
         <div className="user-quote-container">
           <p>
-            “The only way to do great work is to love what you do.” – Steve Jobs
+            “The only way to do great work is to love what you do.”
+            <br/> – Steve Jobs
           </p>
         </div>
       </div>
