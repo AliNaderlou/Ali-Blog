@@ -13,13 +13,20 @@ function Profile() {
         </div>
         <div className="user-quote-container">
           <p>
-            “The only way to do great work is to love what you do.”
-             - Steve Jobs
+            “The only way to do great work is to love what you do.” - Steve Jobs
           </p>
         </div>
       </div>
       <div className="user-social-medias-container">
         <ul>
+          <li className="mail">
+            <a
+              href="mailto: alinaderlo77@hotmail.com"
+              rel="noopener noreferrer"
+            >
+              <i className="fas fa-at" />
+            </a>
+          </li>
           <li className="telegram">
             <a
               href="https://telegram.me/AliNaderlou"
@@ -36,15 +43,6 @@ function Profile() {
               target="_blank"
             >
               <i className="fab fa-instagram" />
-            </a>
-          </li>
-          <li className="facebook">
-            <a
-              href="https://www.facebook.com/AliNaderloo77"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <i className="fab fa-facebook" />
             </a>
           </li>
           <li className="twitter">
