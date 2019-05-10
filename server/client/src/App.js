@@ -53,11 +53,13 @@ class App extends Component {
     };
     this.changeShowPortfolio = this.changeShowPortfolio.bind(this);
     this.resize = this.resize.bind(this);
-    this.handleScroll = this.handleScroll.bind(this);
-
+    this.handleScrollPortrait = this.handleScrollPortrait.bind(this);
+    this.handleScrollLandscape = this.handleScrollLandscape.bind(this);
+    this.loadMoreWorkSamples = this.loadMoreWorkSamples.bind(this);
   }
   componentDidMount() {
     window.addEventListener('resize', this.resize.bind(this));
+    window.addEventListener('scroll', this.handleScrollPortrait);
     this.resize();
   }
   resize() {
@@ -65,10 +67,27 @@ class App extends Component {
       return { ...state, windowWidth: window.innerWidth };
     });
   }
-  handleScroll = (e) => {
-    const bottom = e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight;
-    if (bottom) { alert('fuck') }
-  }
+  handleScrollPortrait = () => {
+    const bottom =
+      window.innerHeight + window.pageYOffset === document.body.scrollHeight;
+    console.log(
+      document.body.scrollHeight,
+      window.innerHeight + window.pageYOffset,
+    );
+    if (bottom) {
+      this.loadMoreWorkSamples();
+    }
+  };
+  handleScrollLandscape = (e) => {
+    const bottom =
+      e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight;
+    if (bottom) {
+      this.loadMoreWorkSamples();
+    }
+  };
+  loadMoreWorkSamples = () => {
+    alert('fuck');
+  };
   changeShowPortfolio() {
     this.setState((state) => {
       return { ...state, showPortfolio: !state.showPortfolio };
@@ -79,7 +98,7 @@ class App extends Component {
       <React.Fragment>
         <Profile />
         <Content
-          onScrollButtonPortfolio={this.handleScroll}
+          onScrollButtonPortfolio={this.handleScrollLandscape}
           windowWidth={this.state.windowWidth}
           onPortfolioToggleClick={() => this.changeShowPortfolio()}
           showPortfolio={this.state.showPortfolio}
