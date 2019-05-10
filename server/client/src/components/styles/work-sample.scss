@@ -35,9 +35,18 @@
     .title {
       margin: 0;
       width: 100%;
-      background-color: #232323;
       color: white;
       box-sizing: border-box;
+      background: linear-gradient(
+      195deg,
+      $gradient-color-1,
+      $gradient-color-2,
+      $gradient-color-3
+    );
+      -webkit-animation: live-gradient 10s ease infinite;
+      -moz-animation: live-gradient 10s ease infinite;
+      animation: live-gradient 10s ease infinite;
+      background-size: 200% 250%;
       h3 {
         margin: 0.45em 0;
       }
