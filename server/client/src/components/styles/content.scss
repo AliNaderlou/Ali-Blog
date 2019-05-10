@@ -7,10 +7,14 @@
   flex-direction: column;
   .header {
     width: 100%;
-    background-color: $accent-color;
+    background: linear-gradient(195deg, #240041, #900048, #ff4057);
+    -webkit-animation: live-gradient 10s ease infinite;
+    -moz-animation: live-gradient 10s ease infinite;
+    animation: live-gradient 10s ease infinite;
+    background-size: 200% 250%;
     display: flex;
     font-family: 'Amithen';
-    color: black;
+    color: white;
     font-size: 2em;
     justify-content: space-between;
     z-index: 1;
@@ -29,7 +33,7 @@
     @include mq($from: mobile, $until: tablet) {
       overflow-y: inherit;
       overflow-x: inherit;
-      padding: 1em; 
+      padding: 1em;
     }
     display: flex;
     border-collapse: collapse;
@@ -37,7 +41,7 @@
     padding-top: 4px;
     padding-bottom: 4px;
     justify-content: space-between;
-    
+
     section {
       display: flex;
       flex-direction: column;
@@ -91,4 +95,20 @@
   //     to(transparent)
   //   );
   // }
+}
+
+@-webkit-keyframes live-gradient {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@-moz-keyframes live-gradient {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@keyframes live-gradient { 
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
