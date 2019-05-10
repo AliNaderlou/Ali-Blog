@@ -15,7 +15,7 @@ function Content(props) {
           }
         />
       </div>
-      <section
+      <section onScroll={props.onScrollButtonPortfolio}
         className={'portfolio-container ' + (props.showPortfolio ? '' : 'hide')}
       >
         {props.windowWidth > 980 ? (

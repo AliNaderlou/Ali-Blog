@@ -53,6 +53,8 @@ class App extends Component {
     };
     this.changeShowPortfolio = this.changeShowPortfolio.bind(this);
     this.resize = this.resize.bind(this);
+    this.handleScroll = this.handleScroll.bind(this);
+
   }
   componentDidMount() {
     window.addEventListener('resize', this.resize.bind(this));
@@ -62,6 +64,10 @@ class App extends Component {
     this.setState((state) => {
       return { ...state, windowWidth: window.innerWidth };
     });
+  }
+  handleScroll = (e) => {
+    const bottom = e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight;
+    if (bottom) { alert('fuck') }
   }
   changeShowPortfolio() {
     this.setState((state) => {
@@ -73,6 +79,7 @@ class App extends Component {
       <React.Fragment>
         <Profile />
         <Content
+          onScrollButtonPortfolio={this.handleScroll}
           windowWidth={this.state.windowWidth}
           onPortfolioToggleClick={() => this.changeShowPortfolio()}
           showPortfolio={this.state.showPortfolio}
