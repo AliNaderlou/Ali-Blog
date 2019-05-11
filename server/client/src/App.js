@@ -70,10 +70,6 @@ class App extends Component {
   handleScrollPortrait = () => {
     const bottom =
       window.innerHeight + window.pageYOffset === document.body.scrollHeight;
-    console.log(
-      document.body.scrollHeight,
-      window.innerHeight + window.pageYOffset,
-    );
     if (bottom) {
       this.loadMoreWorkSamples();
     }
@@ -86,7 +82,13 @@ class App extends Component {
     }
   };
   loadMoreWorkSamples = () => {
-    alert('fuck');
+    fetch(`http://localhost:5000/`)
+      .then((response) => {
+        return response.json();
+      })
+      .then((json) => {
+        console.log(json)
+      });
   };
   changeShowPortfolio() {
     this.setState((state) => {
