@@ -1,5 +1,7 @@
 import React from 'react';
 import WorkSample from './work-sample';
+import Masonry from 'react-masonry-component';
+
 import './styles/content.scss';
 function Content(props) {
   return (
@@ -19,11 +21,15 @@ function Content(props) {
         onScroll={props.onScrollButtonPortfolio}
         className={'portfolio-container ' + (props.showPortfolio ? '' : 'hide')}
       >
-        <section className="portfolio">
+        <Masonry
+          className={'portfolio'} // default ''
+          disableImagesLoaded={false} // default false
+          updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
+        >
           {props.workSamples.map((item) => {
             return <WorkSample {...item} key={item._id} />;
           })}
-        </section>
+        </Masonry>
       </section>
     </section>
   );

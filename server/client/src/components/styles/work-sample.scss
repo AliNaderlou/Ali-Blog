@@ -4,15 +4,15 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  margin: 10px 0;
+  // margin: 10px 0;
   background-color: white;
-  border-radius: 2px 2px 0 0;
+  // border-radius: 2px 2px 0 0;
   width: 100%;
   @include mq($from: desktop) {
-    width: 95%;
+    width: 49%;
   }
   box-sizing: border-box;
-
+  margin: 6px 0.5%;
   .work-sample-info-container {
     display: flex;
     flex-direction: column;
@@ -30,7 +30,7 @@
       @include mq($from: tablet, $until: desktop) {
         height: 44vw;
       }
-      border-radius: 2px 2px 0 0;
+      // border-radius: 2px 2px 0 0;
     }
     .title {
       margin: 0;
@@ -38,11 +38,11 @@
       color: white;
       box-sizing: border-box;
       background: linear-gradient(
-      195deg,
-      $gradient-color-1,
-      $gradient-color-2,
-      $gradient-color-3
-    );
+        195deg,
+        $gradient-color-1,
+        $gradient-color-2,
+        $gradient-color-3
+      );
       -webkit-animation: live-gradient 10s ease infinite;
       -moz-animation: live-gradient 10s ease infinite;
       animation: live-gradient 10s ease infinite;
