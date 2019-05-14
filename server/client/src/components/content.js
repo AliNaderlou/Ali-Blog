@@ -15,33 +15,15 @@ function Content(props) {
           }
         />
       </div>
-      <section onScroll={props.onScrollButtonPortfolio}
+      <section
+        onScroll={props.onScrollButtonPortfolio}
         className={'portfolio-container ' + (props.showPortfolio ? '' : 'hide')}
       >
-        {props.windowWidth > 980 ? (
-          <React.Fragment>
-            <section className="portfolio-col1">
-              {props.workSamples.map((item, i) => {
-                if (i % 2 === 0) {
-                  return <WorkSample {...item} />;
-                }
-              })}
-            </section>
-            <section className="portfolio-col2">
-              {props.workSamples.map((item, i) => {
-                if (i % 2 !== 0) {
-                  return <WorkSample {...item} />;
-                }
-              })}
-            </section>
-          </React.Fragment>
-        ) : (
-          <section className="portfolio">
-            {props.workSamples.map((item) => {
-              return <WorkSample {...item} />;
-            })}
-          </section>
-        )}
+        <section className="portfolio">
+          {props.workSamples.map((item) => {
+            return <WorkSample {...item} key={item._id} />;
+          })}
+        </section>
       </section>
     </section>
   );

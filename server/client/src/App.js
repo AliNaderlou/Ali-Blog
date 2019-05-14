@@ -49,7 +49,7 @@ class App extends Component {
           description:
             'Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do  culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiatdeserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.Labore occaecat non occaecat proident magna nulla anim ullamco in adipisicing. Incididunt veniam excepteur consectetur tempor qui nisi sint laboris deserunt irure sit mollit.',
         },
-      ],
+      ]
     };
     this.changeShowPortfolio = this.changeShowPortfolio.bind(this);
     this.resize = this.resize.bind(this);
@@ -61,6 +61,7 @@ class App extends Component {
     window.addEventListener('resize', this.resize.bind(this));
     window.addEventListener('scroll', this.handleScrollPortrait);
     this.resize();
+    this.loadMoreWorkSamples();
   }
   resize() {
     this.setState((state) => {
@@ -86,8 +87,14 @@ class App extends Component {
       .then((response) => {
         return response.json();
       })
-      .then((json) => {
-        console.log(json)
+      .then((workSamples) => {
+        const loadedWorkSamples = workSamples;
+        this.setState((state) => {
+          const workSamples = state.workSamples.concat(loadedWorkSamples);
+          return {
+            workSamples,
+          };
+        });
       });
   };
   changeShowPortfolio() {
