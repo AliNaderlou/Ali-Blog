@@ -7,9 +7,9 @@ const workSamples = mongoose.model('workSamples');
 
 // const workSample = new workSamples({
 //   title: 'A Test Application',
-//   imageSrc: 'images/The-Last-of-Us-2.jpg',
+//   imageSrc: 'images/722598.jpg',
 //   description:
-//     'Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do  culpa cupidatat tempor officia sit ipsum nulla non.Enim magna',
+//     'Nisi magna o amet cillum incididunt ex do  culpa cupidatat tempor officia sit ipsum nulla non.Enim magna',
 // });
 // workSample.save().then(() => console.log('meow'));
 module.exports = (app) => {

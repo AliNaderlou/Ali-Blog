@@ -23,6 +23,7 @@ function Content(props) {
       >
         <Masonry
           className={'portfolio'} // default ''
+          options={{transitionDuration: 800}} // default {}
           disableImagesLoaded={false} // default false
           updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
         >

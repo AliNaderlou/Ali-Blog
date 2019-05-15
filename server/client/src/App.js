@@ -13,42 +13,42 @@ class App extends Component {
       showPortfolio: true,
       windowWidth: window.innerWidth,
       workSamples: [
-        {
-          title: 'A Test Application',
-          imageSrc: 'images/The-Last-of-Us-2.jpg',
-          description:
-            'Nisi magna laboris pariatur laborum.Nisi magna laboris pariatur laborum.Nisi magna laboris pariatur laborum.Nisi magna laboris pariatur laborum.Nisi magna laboris pariatur laborum.Nisi magna laboris pariatur laborum.Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do  culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiatdeserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.Labore occaecat non occaecat proident magna nulla anim ullamco in adipisicing. Incididunt veniam excepteur consectetur tempor qui nisi sint laboris deserunt irure sit mollit.',
-        },
-        {
-          title: 'A Test Application',
-          imageSrc: 'images/The-Last-of-Us-2.jpg',
-          description:
-            'Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do  culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiatdeserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.Labore occaecat non occaecat proident magna nulla anim ullamco in adipisicing. Incididunt veniam excepteur consectetur tempor qui nisi sint laboris deserunt irure sit mollit.',
-        },
-        {
-          title: 'A Test Application',
-          imageSrc: 'images/The-Last-of-Us-2.jpg',
-          description:
-            'Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do  culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiatdeserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.Labore occaecat non occaecat proident magna nulla anim ullamco in adipisicing. Incididunt veniam excepteur consectetur tempor qui nisi sint laboris deserunt irure sit mollit.',
-        },
-        {
-          title: 'A Test Application',
-          imageSrc: 'images/The-Last-of-Us-2.jpg',
-          description:
-            'Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do  culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiatdeserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.Labore occaecat non occaecat proident magna nulla anim ullamco in adipisicing. Incididunt veniam excepteur consectetur tempor qui nisi sint laboris deserunt irure sit mollit.',
-        },
-        {
-          title: 'A Test Application',
-          imageSrc: 'images/The-Last-of-Us-2.jpg',
-          description:
-            'Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do  culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiatdeserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.Labore occaecat non occaecat proident magna nulla anim ullamco in adipisicing. Incididunt veniam excepteur consectetur tempor qui nisi sint laboris deserunt irure sit mollit.',
-        },
-        {
-          title: 'A Test Application',
-          imageSrc: 'images/The-Last-of-Us-2.jpg',
-          description:
-            'Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do  culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiatdeserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.Labore occaecat non occaecat proident magna nulla anim ullamco in adipisicing. Incididunt veniam excepteur consectetur tempor qui nisi sint laboris deserunt irure sit mollit.',
-        },
+        // {
+        //   title: 'A Test Application',
+        //   imageSrc: 'images/The-Last-of-Us-2.jpg',
+        //   description:
+        //     'Nisi magna laboris pariatur laborum.Nisi magna laboris pariatur laborum.Nisi magna laboris pariatur laborum.Nisi magna laboris pariatur laborum.Nisi magna laboris pariatur laborum.Nisi magna laboris pariatur laborum.Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do  culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiatdeserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.Labore occaecat non occaecat proident magna nulla anim ullamco in adipisicing. Incididunt veniam excepteur consectetur tempor qui nisi sint laboris deserunt irure sit mollit.',
+        // },
+        // {
+        //   title: 'A Test Application',
+        //   imageSrc: 'images/The-Last-of-Us-2.jpg',
+        //   description:
+        //     'Nisi magna laboris pariatur laborum.Do amet Nisi magna laboris pariatur laborum.Do amet Nisi magna laboris pariatur laborum.Do amet Nisi magna laboris pariatur laborum.Do Nisi Nisi magna laboris pariatur laborum.Do amet Nisi magna laboris pariatur laborum.Do amet magna laboris pariatur laborum.Do amet Nisi magna laboris pariatur laborum.Do amet amet Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do  culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiatdeserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.Labore occaecat non occaecat proident magna nulla anim ullamco in adipisicing. Incididunt veniam excepteur consectetur tempor qui nisi sint laboris deserunt irure sit mollit.',
+        // },
+        // {
+        //   title: 'A Test Application',
+        //   imageSrc: 'images/The-Last-of-Us-2.jpg',
+        //   description:
+        //     'Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do  culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiatdeserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.Labore occaecat non occaecat proident magna nulla anim ullamco in adipisicing. Incididunt veniam excepteur consectetur tempor qui nisi sint laboris deserunt irure sit mollit.',
+        // },
+        // {
+        //   title: 'A Test Application',
+        //   imageSrc: 'images/The-Last-of-Us-2.jpg',
+        //   description:
+        //     'Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do  culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiatdeserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.Labore occaecat non occaecat proident magna nulla anim ullamco in adipisicing. Incididunt veniam excepteur consectetur tempor qui nisi sint laboris deserunt irure sit mollit.',
+        // },
+        // {
+        //   title: 'A Test Application',
+        //   imageSrc: 'images/The-Last-of-Us-2.jpg',
+        //   description:
+        //     'Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do  culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiatdeserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.Labore occaecat non occaecat proident magna nulla anim ullamco in adipisicing. Incididunt veniam excepteur consectetur tempor qui nisi sint laboris deserunt irure sit mollit.',
+        // },
+        // {
+        //   title: 'A Test Application',
+        //   imageSrc: 'images/The-Last-of-Us-2.jpg',
+        //   description:
+        //     'Nisi magna laboris pariatur laborum.Do amet cillum incididunt ex do  culpa cupidatat tempor officia sit ipsum nulla non.Enim magna fugiatdeserunt officia. Eu ad eu cillum occaecat ipsum fugiat irure sunt.Labore occaecat non occaecat proident magna nulla anim ullamco in adipisicing. Incididunt veniam excepteur consectetur tempor qui nisi sint laboris deserunt irure sit mollit.',
+        // },
       ]
     };
     this.changeShowPortfolio = this.changeShowPortfolio.bind(this);
