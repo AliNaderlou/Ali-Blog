@@ -69,7 +69,7 @@ class App extends Component {
   }
   handleScrollPortrait = () => {
     const bottom =
-      window.innerHeight + window.pageYOffset === document.body.scrollHeight;
+      window.innerHeight + window.pageYOffset >= document.body.scrollHeight;
     if (bottom) {
       this.loadMoreWorkSamples();
     }
