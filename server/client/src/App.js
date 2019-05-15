@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import './styles/_mq.scss';
 import './styles/fontawesome-free-5.8.2-web/css/all.min.css';
 import './styles/normalize.scss';
