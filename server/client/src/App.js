@@ -82,7 +82,7 @@ class App extends Component {
     }
   };
   loadMoreWorkSamples = () => {
-    fetch(`http://localhost:5000/`)
+    fetch(`http://${window.location.hostname}:5000/`)
       .then((response) => {
         return response.json();
       })

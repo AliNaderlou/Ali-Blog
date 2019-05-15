@@ -11,8 +11,13 @@
   @include mq($from: desktop) {
     width: 49%;
   }
+  
   box-sizing: border-box;
   margin: 6px 0.5%;
+  @include mq($from: tablet, $until: desktop) {
+    width: 97%;
+    margin: 1.5% 1.5%;
+  }
   .work-sample-info-container {
     display: flex;
     flex-direction: column;
