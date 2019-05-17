@@ -3,7 +3,7 @@ const { Schema } = mongoose;
 
 const workSampleSchema = new Schema({
   title: String,
-  imageSrc: String,
+  medias: Array,
   description: String,
 });
 

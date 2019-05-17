@@ -1,0 +1,19 @@
+.media-container {
+  position: relative;
+  .fa-chevron-left {
+    position: absolute;
+    top: 40%;
+    left: 1%;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+  }
+  .fa-chevron-right {
+    position: absolute;
+    top: 40%;
+    left: 94%;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+  }
+}
