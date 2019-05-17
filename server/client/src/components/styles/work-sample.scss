@@ -26,17 +26,6 @@
     .work-description {
       padding: 0 0.45em;
     }
-    .image {
-      width: 100%;
-      height: 24vw;
-      @include mq($from: mobile, $until: tablet) {
-        height: 54vw;
-      }
-      @include mq($from: tablet, $until: desktop) {
-        height: 44vw;
-      }
-      // border-radius: 2px 2px 0 0;
-    }
     .title {
       margin: 0;
       width: 100%;
