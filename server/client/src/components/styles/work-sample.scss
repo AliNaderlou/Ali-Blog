@@ -11,7 +11,7 @@
   @include mq($from: desktop) {
     width: 49%;
   }
-  
+
   box-sizing: border-box;
   margin: 6px 0.5%;
   @include mq($from: tablet, $until: desktop) {
@@ -67,4 +67,27 @@
   .work-description {
     font-size: 14px;
   }
+}
+.aws-sld__bullets {
+  bottom: 10px;
+  z-index: 2;
+}
+.aws-sld__bullets button {
+  height: 10px;
+  width: 10px;
+}
+.aws-btn {
+  --slider-height-percentage: 60%;
+  --slider-transition-duration: 700ms;
+  --organic-arrow-thickness: 6px;
+  --organic-arrow-border-radius: 0px;
+  --organic-arrow-height: 28px;
+  --organic-arrow-color: rgba(255, 255, 255, 0.5) ;
+  --control-button-width: 10%;
+  --control-button-height: 25%;
+  --control-button-background: transparent;
+  --control-bullet-color: rgba(0, 0, 0, 0.7);
+  --control-bullet-active-color:rgba(255, 255, 255, 0.5) ;
+  --loader-bar-color: #02576c;
+  --loader-bar-height: 6px;
 }
