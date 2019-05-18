@@ -5,19 +5,23 @@ import './styles/normalize.scss';
 import './styles/index.scss';
 import Profile from './components/profile';
 import Content from './components/content';
+import Loading from 'react-loading-bar';
+import 'react-loading-bar/dist/index.css';
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       showPortfolio: true,
       windowWidth: window.innerWidth,
-      workSamples: []
+      workSamples: [],
+      showLoading: false,
     };
     this.changeShowPortfolio = this.changeShowPortfolio.bind(this);
     this.resize = this.resize.bind(this);
     this.handleScrollPortrait = this.handleScrollPortrait.bind(this);
     this.handleScrollLandscape = this.handleScrollLandscape.bind(this);
     this.loadMoreWorkSamples = this.loadMoreWorkSamples.bind(this);
+    this.changeShowLoading = this.changeShowLoading.bind(this);
   }
   componentDidMount() {
     window.addEventListener('resize', this.resize.bind(this));
@@ -45,6 +49,7 @@ class App extends Component {
     }
   };
   loadMoreWorkSamples = () => {
+    this.changeShowLoading();
     fetch(`http://${window.location.hostname}:5000/`)
       .then((response) => {
         return response.json();
@@ -57,6 +62,7 @@ class App extends Component {
             workSamples,
           };
         });
+        this.changeShowLoading();
       });
   };
   changeShowPortfolio() {
@@ -64,9 +70,19 @@ class App extends Component {
       return { ...state, showPortfolio: !state.showPortfolio };
     });
   }
+  changeShowLoading() {
+    this.setState((state) => {
+      return { ...state, showLoading: !state.showLoading };
+    });
+  }
   render() {
     return (
       <React.Fragment>
+        <Loading
+          show={this.state.showLoading}
+          color="#05a19c"
+          showSpinner={false}
+        />
         <Profile />
         <Content
           onScrollButtonPortfolio={this.handleScrollLandscape}
