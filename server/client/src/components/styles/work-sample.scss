@@ -33,9 +33,9 @@
       box-sizing: border-box;
       background: linear-gradient(
         195deg,
-        $gradient-color-1,
-        $gradient-color-2,
-        $gradient-color-3
+        var(--gradient-color-1),
+        var(--gradient-color-2),
+        var(--gradient-color-3)
       );
       -webkit-animation: live-gradient 10s ease infinite;
       -moz-animation: live-gradient 10s ease infinite;
@@ -58,7 +58,7 @@
       height: 30px;
       width: 100px;
       color: white;
-      background: $primary-color;
+      background: var(--primary-color);
       border-radius: 2px 0 0 0;
       cursor: pointer;
       font-size: 14px;
@@ -82,12 +82,12 @@
   --organic-arrow-thickness: 6px;
   --organic-arrow-border-radius: 0px;
   --organic-arrow-height: 28px;
-  --organic-arrow-color: rgba(255, 255, 255, 0.5) ;
+  --organic-arrow-color: rgba(255, 255, 255, 0.5);
   --control-button-width: 10%;
   --control-button-height: 25%;
   --control-button-background: transparent;
   --control-bullet-color: rgba(0, 0, 0, 0.7);
-  --control-bullet-active-color:rgba(255, 255, 255, 0.5) ;
-  --loader-bar-color: #05a19c;
+  --control-bullet-active-color: rgba(255, 255, 255, 0.5);
+  --loader-bar-color: var(--accent-color);
   --loader-bar-height: 6px;
 }

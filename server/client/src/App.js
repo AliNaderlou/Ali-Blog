@@ -6,6 +6,7 @@ import './styles/index.scss';
 import Profile from './components/profile';
 import Content from './components/content';
 import Loading from 'react-loading-bar';
+import ScrollToUpButton from './components/scroll-to-up-button';
 import 'react-loading-bar/dist/index.css';
 
 class App extends Component {
@@ -79,6 +80,7 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
+        <ScrollToUpButton />
         <Loading
           show={this.state.showLoading}
           color="#05a19c"

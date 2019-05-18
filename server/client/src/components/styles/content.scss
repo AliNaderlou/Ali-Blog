@@ -15,9 +15,9 @@
     padding: 0.2em 0;
     background: linear-gradient(
       195deg,
-      $gradient-color-1,
-      $gradient-color-2,
-      $gradient-color-3
+      var(--gradient-color-1),
+      var(--gradient-color-2),
+      var(--gradient-color-3)
     );
     -webkit-animation: live-gradient 10s ease infinite;
     -moz-animation: live-gradient 10s ease infinite;
@@ -67,14 +67,14 @@
   }
 
   .portfolio-container::-webkit-scrollbar-thumb {
-    background-color: $scroll-bar-primary-color;
+    background-color: var(--scroll-bar-primary-color);
     background-image: -webkit-linear-gradient(
       45deg,
-      $scroll-bar-accent-color 25%,
+      --scroll-bar-accent-color 25%,
       transparent 25%,
       transparent 50%,
-      $scroll-bar-accent-color 50%,
-      $scroll-bar-accent-color 75%,
+      --scroll-bar-accent-color 50%,
+      --scroll-bar-accent-color 75%,
       transparent 75%,
       transparent
     );

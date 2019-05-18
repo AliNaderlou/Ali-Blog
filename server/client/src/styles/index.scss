@@ -14,10 +14,10 @@ body,
     url('/fonts/Amithen.ttf') format('truetype');
 }
 ::-moz-selection {
-  background: $accent-color;
+  background: var(--accent-color);
 }
 ::selection {
-  background: $accent-color;
+  background: var(--accent-color);
 }
 .unselectable {
   user-select: none;

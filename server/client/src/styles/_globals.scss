@@ -1,40 +1,50 @@
-$primary-color: #333333;
-$scroll-bar-primary-color: #323232;
-$scroll-bar-accent-color: #111111;
-// $gradient-color-1: #240041;
-// $gradient-color-2: #900048;
-// $gradient-color-3: #ff4057;
-// $accent-color: #900048;
+// --primary-color: #333333;
+// --scroll-bar-primary-color: #323232;
+// --scroll-bar-accent-color: #111111;
 
-$gradient-color-1: #103c42;
-$gradient-color-2: #02576c;
-$gradient-color-3: #05a19c;
-$accent-color: #05a19c; 
+// --gradient-color-1: #240041;
+// --gradient-color-2: #900048;
+// --gradient-color-3: #ff4057;
+// --accent-color: #900048;
 
-// $gradient-color-1: #ff0b55;
-// $gradient-color-2: #d61d4e;
-// $gradient-color-3: #323232;
+// --gradient-color-1: #103c42;
+// --gradient-color-2: #02576c;
+// --gradient-color-3: #05a19c;
+// --accent-color: #05a19c;
 
-// $gradient-color-1: #f6e0b3;
-// $gradient-color-2: #dbcc8f;
-// $gradient-color-3: #4e4e4e;
+// --gradient-color-1: #ff0b55;
+// --gradient-color-2: #d61d4e;
+// --gradient-color-3: #323232;
 
-// $gradient-color-1: #c06c84;
-// $gradient-color-2: #6c5b7b;
-// $gradient-color-3: #35477d;
+// --gradient-color-1: #f6e0b3;
+// --gradient-color-2: #dbcc8f;
+// --gradient-color-3: #4e4e4e;
 
-// $gradient-color-1: #408ab4;
-// $gradient-color-2: #34699a;
-// $gradient-color-3: #113f67;
+// --gradient-color-1: #c06c84;
+// --gradient-color-2: #6c5b7b;
+// --gradient-color-3: #35477d;
 
-// $gradient-color-1: #a7d7c5;
-// $gradient-color-2: #74b49b;
-// $gradient-color-3: #5c8d89;
+// --gradient-color-1: #408ab4;
+// --gradient-color-2: #34699a;
+// --gradient-color-3: #113f67;
 
-// $gradient-color-1: #a2eae2;
-// $gradient-color-2: #41aaa8;
-// $gradient-color-3: #105e62;
+// --gradient-color-1: #a7d7c5;
+// --gradient-color-2: #74b49b;
+// --gradient-color-3: #5c8d89;
 
-// $gradient-color-1: #d84c73;
-// $gradient-color-2: #35234b;
-// $gradient-color-3: #5c3b6f;
+// --gradient-color-1: #a2eae2;
+// --gradient-color-2: #41aaa8;
+// --gradient-color-3: #105e62;
+
+// --gradient-color-1: #d84c73;
+// --gradient-color-2: #35234b;
+// --gradient-color-3: #5c3b6f;
+:root {
+  --primary-color: #333333;
+  --scroll-bar-primary-color: #323232;
+  --scroll-bar-accent-color: #111111;
+  --gradient-color-1: #103c42;
+  --gradient-color-2: #02576c;
+  --gradient-color-3: #05a19c;
+  --accent-color: #05a19c;
+}
