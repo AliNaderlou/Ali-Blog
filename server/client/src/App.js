@@ -7,6 +7,7 @@ import Profile from './components/profile';
 import Content from './components/content';
 import Loading from 'react-loading-bar';
 import 'react-loading-bar/dist/index.css';
+
 class App extends Component {
   constructor(props) {
     super(props);
