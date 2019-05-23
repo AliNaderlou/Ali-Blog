@@ -16,7 +16,8 @@ class App extends Component {
       showPortfolio: true,
       windowWidth: window.innerWidth,
       workSamples: [],
-      showLoading: false,
+      showLoading: true,
+      isFirstLoad: true,
     };
     this.changeShowPortfolio = this.changeShowPortfolio.bind(this);
     this.resize = this.resize.bind(this);
@@ -29,7 +30,7 @@ class App extends Component {
     window.addEventListener('resize', this.resize.bind(this));
     window.addEventListener('scroll', this.handleScrollPortrait);
     this.resize();
-    this.loadMoreWorkSamples();
+    this.loadMoreWorkSamples({ isFirstLoad: true });
   }
   resize() {
     this.setState((state) => {
@@ -40,18 +41,20 @@ class App extends Component {
     const bottom =
       window.innerHeight + window.pageYOffset >= document.body.scrollHeight;
     if (bottom) {
-      this.loadMoreWorkSamples();
+      this.loadMoreWorkSamples({ isFirstLoad: false });
     }
   };
   handleScrollLandscape = (e) => {
     const bottom =
       e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight;
     if (bottom) {
-      this.loadMoreWorkSamples();
+      this.loadMoreWorkSamples({ isFirstLoad: false });
     }
   };
-  loadMoreWorkSamples = () => {
-    this.changeShowLoading();
+  loadMoreWorkSamples = ({ isFirstLoad }) => {
+    if (!isFirstLoad) {
+      this.changeShowLoading();
+    }
     fetch(`http://${window.location.hostname}:5000/`)
       .then((response) => {
         return response.json();
@@ -59,9 +62,14 @@ class App extends Component {
       .then((workSamples) => {
         const loadedWorkSamples = workSamples;
         this.setState((state) => {
-          const workSamples = state.workSamples.concat(loadedWorkSamples);
+          let workSamples = state.workSamples.concat(loadedWorkSamples);
+          if (isFirstLoad){
+            workSamples[0]={...workSamples[0],isFirstChiled:true}
+          }
+          console.log(workSamples)
           return {
             workSamples,
+            isFirstLoad,
           };
         });
         this.changeShowLoading();
