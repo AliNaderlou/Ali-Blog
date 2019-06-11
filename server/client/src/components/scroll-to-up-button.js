@@ -5,11 +5,14 @@ import './styles/scroll-to-up-button.scss';
 function ScrollToUpButton(props) {
   return (
     <Link
-      to="FirstElement"
+      activeClass="hide"
+      to={props.to} 
       smooth={true}
       duration={1000}
-      containerId="portfolio-container"
-      offset={-100}
+      containerId={props.containerId}
+      offset={-200}
+      spy={true}
+      isDynamic={true}
     >
       <div className="scroll-to-up-container">
         <i className="icon fas fa-angle-up" />

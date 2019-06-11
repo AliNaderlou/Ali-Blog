@@ -1,5 +1,9 @@
 @import '../../styles/_globals';
+.hide{
+    display: none;
+}
 .scroll-to-up-container{
+     transition: all .3s linear;
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -17,7 +21,7 @@
     -ms-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
-    z-index:5;
+    z-index:11;
     display: flex;
     align-items: center;
     justify-content: center;

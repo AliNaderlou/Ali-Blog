@@ -14,6 +14,9 @@
 
   box-sizing: border-box;
   margin: 6px 0.5%;
+  @include mq($from: mobile, $until: tablet) {
+    margin: 1em 0;
+  }
   @include mq($from: tablet, $until: desktop) {
     width: 97%;
     margin: 1.5% 1.5%;

@@ -8,6 +8,15 @@ import Content from './components/content';
 import Loading from 'react-loading-bar';
 import ScrollToUpButton from './components/scroll-to-up-button';
 import 'react-loading-bar/dist/index.css';
+import * as Scroll from 'react-scroll';
+import {
+  Link,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from 'react-scroll';
 
 class App extends Component {
   constructor(props) {
@@ -25,12 +34,15 @@ class App extends Component {
     this.handleScrollLandscape = this.handleScrollLandscape.bind(this);
     this.loadMoreWorkSamples = this.loadMoreWorkSamples.bind(this);
     this.changeShowLoading = this.changeShowLoading.bind(this);
+   
+
   }
   componentDidMount() {
     window.addEventListener('resize', this.resize.bind(this));
     window.addEventListener('scroll', this.handleScrollPortrait);
     this.resize();
     this.loadMoreWorkSamples({ isFirstLoad: true });
+    scrollSpy.update();
   }
   resize() {
     this.setState((state) => {
@@ -38,11 +50,11 @@ class App extends Component {
     });
   }
   handleScrollPortrait = () => {
-    const bottom =
-      window.innerHeight + window.pageYOffset >= document.body.scrollHeight;
-    if (bottom) {
-      this.loadMoreWorkSamples({ isFirstLoad: false });
-    }
+    // const bottom =
+    //   window.innerHeight + window.pageYOffset >= document.body.scrollHeight;
+    // if (bottom) {
+    //   this.loadMoreWorkSamples({ isFirstLoad: false });
+    // }
   };
   handleScrollLandscape = (e) => {
     const bottom =
@@ -63,10 +75,9 @@ class App extends Component {
         const loadedWorkSamples = workSamples;
         this.setState((state) => {
           let workSamples = state.workSamples.concat(loadedWorkSamples);
-          if (isFirstLoad){
-            workSamples[0]={...workSamples[0],isFirstChiled:true}
+          if (isFirstLoad) {
+            workSamples[0] = { ...workSamples[0], isFirstChiled: true };
           }
-          console.log(workSamples)
           return {
             workSamples,
             isFirstLoad,
@@ -88,7 +99,11 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <ScrollToUpButton />
+        <ScrollToUpButton
+          show={true}
+          to="FirstElement"
+          containerId="portfolio-container"
+        />
         <Loading
           show={this.state.showLoading}
           color="#05a19c"
