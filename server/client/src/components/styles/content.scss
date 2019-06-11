@@ -13,12 +13,7 @@
     justify-content: space-between;
     z-index: 1;
     padding: 0.2em 0;
-    background: linear-gradient(
-      195deg,
-      var(--gradient-color-1),
-      var(--gradient-color-2),
-      var(--gradient-color-3)
-    );
+    background: linear-gradient(195deg, #232323, #434343, #545454);
     -webkit-animation: live-gradient 10s ease infinite;
     -moz-animation: live-gradient 10s ease infinite;
     animation: live-gradient 10s ease infinite;
@@ -37,10 +32,10 @@
     overflow-x: hidden;
     position: relative;
     @include mq($from: mobile, $until: tablet) {
-      padding: 0 .5em;
+      padding: 0 0.5em;
       overflow-y: scroll;
       overflow-x: inherit;
-      
+
       height: 100vh;
     }
     display: flex;

@@ -8,15 +8,8 @@ import Content from './components/content';
 import Loading from 'react-loading-bar';
 import ScrollToUpButton from './components/scroll-to-up-button';
 import 'react-loading-bar/dist/index.css';
-import * as Scroll from 'react-scroll';
-import {
-  Link,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller,
-} from 'react-scroll';
+import Cookie from 'react-cookies';
+import { scrollSpy } from 'react-scroll';
 
 class App extends Component {
   constructor(props) {
@@ -34,8 +27,16 @@ class App extends Component {
     this.handleScrollLandscape = this.handleScrollLandscape.bind(this);
     this.loadMoreWorkSamples = this.loadMoreWorkSamples.bind(this);
     this.changeShowLoading = this.changeShowLoading.bind(this);
-   
-
+    if (!Cookie.load('userIp')) {
+      fetch(`http://${window.location.hostname}:5000/submit-ip-address`)
+        .then((response) => {
+          return response.json();
+        })
+        .then((response) => {
+          Cookie.save('userIp', response.userIp, { path: '/' },{maxAge:900000});
+        });
+    }
+    console.log(Cookie.load('userIp'))
   }
   componentDidMount() {
     window.addEventListener('resize', this.resize.bind(this));
@@ -67,7 +68,7 @@ class App extends Component {
     if (!isFirstLoad) {
       this.changeShowLoading();
     }
-    fetch(`http://${window.location.hostname}:5000/`)
+    fetch(`http://${window.location.hostname}:5000/get-worksamples`)
       .then((response) => {
         return response.json();
       })

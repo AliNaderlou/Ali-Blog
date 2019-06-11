@@ -3,7 +3,11 @@ mongoose.connect('mongodb://localhost:27017/AliBlog', {
   useNewUrlParser: true,
 });
 require('../models/WorkSample');
+require('../models/VisitLog');
+var useragent = require('express-useragent');
+
 const workSamples = mongoose.model('workSamples');
+const visitLogs = mongoose.model('visitlogs');
 
 // const workSample = new workSamples({
 //   title: 'A Test Application 3',
@@ -13,9 +17,19 @@ const workSamples = mongoose.model('workSamples');
 // });
 // workSample.save().then(() => console.log('meow'));
 module.exports = (app) => {
-  app.get('/', (req, res) => {
+  app.use(useragent.express());
+  app.get('/get-worksamples', (req, res) => {
     workSamples.find({}, function(err, workSamples) {
       res.send(workSamples);
     });
+  });
+  app.get('/submit-ip-address', (req, res) => {
+    let visitLog=new visitLogs({
+      ip:req.hostname,
+      detail:req.useragent,
+      date:new Date()
+    })
+    visitLog.save();
+    res.send({userIp:req.hostname})
   });
 };
