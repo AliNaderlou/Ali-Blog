@@ -18,18 +18,19 @@ const visitLogs = mongoose.model('visitlogs');
 // workSample.save().then(() => console.log('meow'));
 module.exports = (app) => {
   app.use(useragent.express());
-  app.get('/get-worksamples', (req, res) => {
-    workSamples.find({}, function(err, workSamples) {
-      res.send(workSamples);
+  app.get('/get-worksamples/:workSamplesLoadCount', (req, res) => {
+    let q = workSamples.find({}).skip(req.params.workSamplesLoadCount*3).limit(3);
+    q.exec(function(err, workSamples) {
+     res.send(workSamples);
     });
   });
   app.get('/submit-ip-address', (req, res) => {
-    let visitLog=new visitLogs({
-      ip:req.hostname,
-      detail:req.useragent,
-      date:new Date()
-    })
+    let visitLog = new visitLogs({
+      ip: req.hostname,
+      detail: req.useragent,
+      date: new Date(),
+    });
     visitLog.save();
-    res.send({userIp:req.hostname})
+    res.send({ userIp: req.hostname });
   });
 };

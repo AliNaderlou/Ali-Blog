@@ -18,6 +18,7 @@ class App extends Component {
       showPortfolio: true,
       windowWidth: window.innerWidth,
       workSamples: [],
+      workSamplesLoadCount:0,
       showLoading: true,
       isFirstLoad: true,
     };
@@ -36,7 +37,6 @@ class App extends Component {
           Cookie.save('userIp', response.userIp, { path: '/' },{maxAge:900000});
         });
     }
-    console.log(Cookie.load('userIp'))
   }
   componentDidMount() {
     window.addEventListener('resize', this.resize.bind(this));
@@ -68,7 +68,7 @@ class App extends Component {
     if (!isFirstLoad) {
       this.changeShowLoading();
     }
-    fetch(`http://${window.location.hostname}:5000/get-worksamples`)
+    fetch(`http://${window.location.hostname}:5000/get-worksamples/${this.state.workSamplesLoadCount}`)
       .then((response) => {
         return response.json();
       })
@@ -79,9 +79,11 @@ class App extends Component {
           if (isFirstLoad) {
             workSamples[0] = { ...workSamples[0], isFirstChiled: true };
           }
+          let workSamplesLoadCount = state.workSamplesLoadCount+ 1;
           return {
             workSamples,
             isFirstLoad,
+            workSamplesLoadCount
           };
         });
         this.changeShowLoading();
