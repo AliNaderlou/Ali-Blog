@@ -105,7 +105,6 @@ class App extends Component {
         <ScrollToUpButton
           show={true}
           to="FirstElement"
-          containerId="portfolio-container"
         />
         <Loading
           show={this.state.showLoading}

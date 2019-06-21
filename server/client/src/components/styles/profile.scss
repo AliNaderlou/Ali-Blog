@@ -3,13 +3,17 @@
 .profile-info-container {
   background-color: var(--primary-color);
   color: white;
-  width: 360px;
+  width: 300px;
+  height: 100%;
+  z-index: 10;
+  position: fixed;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   @include mq($from: mobile, $until: tablet) {
     width: 100%;
     min-height: 100%;
+    position:inherit; 
   }
   .profile-body {
     .user-image-container {

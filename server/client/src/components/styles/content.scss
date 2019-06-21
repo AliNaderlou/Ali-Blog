@@ -4,6 +4,11 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  margin-left: 300px;
+  background-color: #e2e1e0;
+  @include mq($from: mobile, $until: tablet) {
+    margin-left: 0;
+  }
   .header {
     width: 100%;
     display: flex;
@@ -12,7 +17,7 @@
     font-size: 2em;
     justify-content: space-between;
     z-index: 1;
-    padding: 0.2em 0;
+    padding: 0.25em 0;
     background: linear-gradient(195deg, #232323, #434343, #545454);
     -webkit-animation: live-gradient 10s ease infinite;
     -moz-animation: live-gradient 10s ease infinite;
@@ -28,25 +33,26 @@
     }
   }
   .portfolio-container {
-    overflow-y: scroll;
-    overflow-x: hidden;
+    // overflow-y: scroll;
+    // overflow-x: hidden;
     position: relative;
     @include mq($from: mobile, $until: tablet) {
       padding: 0 0.5em;
-      overflow-y: scroll;
-      overflow-x: inherit;
+      // overflow-y: scroll;
+      // overflow-x: inherit;
 
-      height: 100vh;
+      // height: 100vh;
     }
     display: flex;
     border-collapse: collapse;
-    background-color: #e2e1e0;
+   
     justify-content: space-between;
 
     .portfolio {
       width: 100%;
       box-sizing: border-box;
       margin: 0 auto;
+      background-color: #e2e1e0;
       .to-the-top-pointer {
         display: none;
       }

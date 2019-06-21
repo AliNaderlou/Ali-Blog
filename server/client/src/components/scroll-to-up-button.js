@@ -9,8 +9,7 @@ function ScrollToUpButton(props) {
       to={props.to} 
       smooth={true}
       duration={1000}
-      containerId={props.containerId}
-      offset={-200}
+      offset={-80}
       spy={true}
       isDynamic={true}
     >
