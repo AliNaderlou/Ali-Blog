@@ -18,7 +18,7 @@
     justify-content: space-between;
     z-index: 1;
     padding: 0.25em 0;
-    background: linear-gradient(195deg, #232323, #434343, #545454);
+    background: linear-gradient(195deg,  var(--gradient-color-3), var(--gradient-color-2), var(--accent-color));
     -webkit-animation: live-gradient 10s ease infinite;
     -moz-animation: live-gradient 10s ease infinite;
     animation: live-gradient 10s ease infinite;

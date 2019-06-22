@@ -4,10 +4,13 @@ mongoose.connect('mongodb://localhost:27017/AliBlog', {
 });
 require('../models/WorkSample');
 require('../models/VisitLog');
+require('../models/User');
+
 var useragent = require('express-useragent');
 
 const workSamples = mongoose.model('workSamples');
 const visitLogs = mongoose.model('visitlogs');
+const users = mongoose.model('users');
 
 // const workSample = new workSamples({
 //   title: 'A Test Application 3',
@@ -18,13 +21,13 @@ const visitLogs = mongoose.model('visitlogs');
 // workSample.save().then(() => console.log('meow'));
 module.exports = (app) => {
   app.use(useragent.express());
-  app.get('/get-worksamples/:workSamplesLoadCount', (req, res) => {
+  app.get('/api/get-worksamples/:workSamplesLoadCount', (req, res) => {
     let q = workSamples.find({}).skip(req.params.workSamplesLoadCount*3).limit(3);
     q.exec(function(err, workSamples) {
      res.send(workSamples);
     });
   });
-  app.get('/submit-ip-address', (req, res) => {
+  app.get('/api/submit-ip-address', (req, res) => {
     let visitLog = new visitLogs({
       ip: req.hostname,
       detail: req.useragent,
@@ -33,4 +36,13 @@ module.exports = (app) => {
     visitLog.save();
     res.send({ userIp: req.hostname });
   });
+  app.get('/submituser', (req, res) => {
+    let user = new users({
+      username:"#itsdb",
+      password:"6205014"
+    });
+    user.save();
+    res.send("f");
+  });
+ 
 };

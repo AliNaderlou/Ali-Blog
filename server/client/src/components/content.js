@@ -18,7 +18,6 @@ function Content(props) {
         />
       </div>
       <section
-        onScroll={props.onScrollButtonPortfolio}
         className={'portfolio-container ' + (props.showPortfolio ? '' : 'hide')}
         id="portfolio-container"
       >
