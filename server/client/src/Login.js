@@ -1,59 +1,62 @@
 import React, { Component } from 'react';
-class Admin extends Component {
+
+class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username : '',
-      password: ''
+      username: '',
+      password: '',
+      loggedIn: false,
     };
   }
   handleInputChange = (event) => {
     const { value, name } = event.target;
     this.setState({
-      [name]: value
+      [name]: value,
     });
-  }
+  };
   onSubmit = (event) => {
     event.preventDefault();
     fetch(`/api/auth/authenticate`, {
       method: 'POST',
       body: JSON.stringify(this.state),
       headers: {
-        'Content-Type': 'application/json'
-      }
+        'Content-Type': 'application/json',
+      },
     })
-    .then(res => {
-      if (res.status === 200) {
-        this.props.history.push('/');
-      } else {
-        const error = new Error(res.error);
-        throw error;
-      }
-    })
-    .catch(err => {
-      console.error(err);
-      alert('Error logging in please try again');
-    });
-  }
+      .then((res) => {
+        if (res.status === 200) {
+          this.props.history.push('/Admin');
+        } else {
+          throw res.json();
+        }
+      })
+      .catch((err) => {
+        err.then((err) => {
+          alert(err.error);
+        });
+      });
+  };
   componentDidMount() {
     fetch(`/api/checkToken`)
-      .then(res => {
+      .then((res) => {
         if (res.status === 200) {
-          this.setState({ loading: false });
-          alert('fs')
+          this.setState((prevState, props) => ({
+            ...prevState,
+            loggedIn: true,
+          }));
         } else {
           const error = new Error(res.error);
           throw error;
         }
       })
-      .catch(err => {
-        console.error(err);
-        this.setState({ loading: false, redirect: true });
+      .catch((err) => {
+        // console.log(err);
       });
   }
   render() {
-    return (
-        <form onSubmit={this.onSubmit}>
+    return !this.state.loggedIn ? (
+      <form onSubmit={this.onSubmit}>
         <h1>Login Below!</h1>
         <input
           type="text"
@@ -71,10 +74,12 @@ class Admin extends Component {
           onChange={this.handleInputChange}
           required
         />
-       <input type="submit" value="Submit"/>
+        <input type="submit" value="Submit" />
       </form>
+    ) : (
+      <h1>You already logged In</h1>
     );
   }
 }
 
-export default Admin;
+export default Login;
