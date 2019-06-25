@@ -10,6 +10,7 @@ export default function withAuth(ComponentToProtect) {
         redirect: false,
       };
     }
+    
     componentDidMount() {
       fetch('/api/checkToken')
         .then(res => {

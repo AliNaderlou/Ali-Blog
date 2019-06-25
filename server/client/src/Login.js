@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import './styles/login.scss'
+import './styles/index.scss';
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -26,7 +27,7 @@ class Login extends Component {
     })
       .then((res) => {
         if (res.status === 200) {
-          this.props.history.push('/Admin');
+          this.props.history.push('/admin');
         } else {
           throw res.json();
         }
@@ -55,9 +56,11 @@ class Login extends Component {
       });
   }
   render() {
-    return !this.state.loggedIn ? (
-      <form onSubmit={this.onSubmit}>
-        <h1>Login Below!</h1>
+    return (
+    <section className="loginContainer">
+         {(!this.state.loggedIn) ? 
+         <form onSubmit={this.onSubmit} className="loginFormContainer">
+        <h1>Login Mr.Naderlou</h1>
         <input
           type="text"
           name="username"
@@ -76,9 +79,11 @@ class Login extends Component {
         />
         <input type="submit" value="Submit" />
       </form>
-    ) : (
+     : 
       <h1>You already logged In</h1>
-    );
+    }
+      </section>
+    )
   }
 }
 

@@ -26,7 +26,7 @@ class Client extends Component {
     this.loadMoreWorkSamples = this.loadMoreWorkSamples.bind(this);
     this.changeShowLoading = this.changeShowLoading.bind(this);
     if (!Cookie.load('userIp')) {
-      fetch(`/api/submit-ip-address`)
+      fetch(`/api/data/submit-ip-address`)
         .then((response) => {
           return response.json();
         })
@@ -57,7 +57,7 @@ class Client extends Component {
       this.changeShowLoading();
     }
     fetch(
-      `/api/get-worksamples/${
+      `/api/data/get-worksamples/${
         this.state.workSamplesLoadCount
       }`,
     )

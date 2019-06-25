@@ -7,10 +7,15 @@ const keys = require('./config/keys');
 const cors = require('cors');
 app.use(cors());
 const cookieParser = require('cookie-parser');
+var useragent = require('express-useragent');
+
 app.use(cookieParser());
 app.use(express.json());
+app.use(useragent.express());
 
-require('./routes/dataRoutes')(app);
+var dataRoutes = require('./routes/dataRoutes');
+app.use('/api/data/', dataRoutes);
+
 // Then use it before your routes are set up:
 var testRoutes = require('./routes/testRoutes');
 app.use('/api/test', testRoutes);
@@ -18,9 +23,6 @@ app.use('/api/test', testRoutes);
 var authRoutes = require('./routes/authRoutes');
 app.use('/api/auth', authRoutes);
 
-app.get('/api/secret', withAuth, function(req, res) {
-  res.send('The password is potato');
-});
 app.get('/api/checkToken', withAuth, function(req, res) {
   res.sendStatus(200);
 });

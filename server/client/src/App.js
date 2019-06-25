@@ -4,6 +4,7 @@ import Client from './Client';
 import Login from './Login';
 import withAuth from './withAuth';
 import Admin from './Admin'
+import EditWorkSample from './EditWorkSample'
 class App extends Component {
   constructor(props) {
     super();
@@ -15,6 +16,8 @@ class App extends Component {
           <Route path="/" exact component={Client} />
           <Route path="/itsme" component={Login} />
           <Route path="/admin" component={withAuth(Admin)} />
+          <Route path="/edit/worksample/:id" component={withAuth(EditWorkSample)} />
+
         </Switch>
       </BrowserRouter>
     );
