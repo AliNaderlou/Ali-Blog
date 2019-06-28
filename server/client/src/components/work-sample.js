@@ -5,7 +5,6 @@ import './styles/work-sample.scss';
 
 function WorkSample(props) {
   return (
-    
     <div className="work-sample box-shadow" {...(props.isFirstChild===true) && {name:'FirstElement'}}>
       <section className="work-sample-info-container">
         <AwesomeSlider className="aws-btn">

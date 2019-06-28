@@ -1,6 +1,9 @@
 var express = require('express');
 var router = express.Router();
+const withAuth = require('../middleware/authMiddleware');
+
 const mongoose = require('mongoose');
+
 mongoose.connect('mongodb://localhost:27017/AliBlog', {
   useNewUrlParser: true,
 });
@@ -47,5 +50,34 @@ router.get('/submit-ip-address', (req, res) => {
   });
   visitLog.save();
   res.send({ userIp: req.hostname });
+});
+router.post('/update-worksample', withAuth, (req, res) => {
+  const workSample = req.body;
+  console.log(workSample);
+  workSamples.findOneAndUpdate(
+    { _id: workSample._id },
+    { ...workSample },
+    function(err, doc) {
+      if (err) return res.send(500, { error: err });
+      return res.send(200);
+    },
+  );
+});
+
+router.post('/create-worksample', withAuth, (req, res) => {
+  const workSampleData = req.body;
+  const workSample = new workSamples({...workSampleData,date:new Date()});
+  workSample.save().then(() => res.send(200));
+});
+
+router.post('/remove-worksample', withAuth, (req, res) => {
+  const {id} = req.body;
+ 
+  workSamples.findByIdAndRemove(id, function(err, offer) {
+    if (err) {
+      throw err;
+    }
+   res.send(200);
+  });
 });
 module.exports = router;
