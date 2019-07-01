@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import './styles/admin.scss'
 class Admin extends React.Component {
   constructor(props) {
     super(props);
@@ -38,7 +38,6 @@ class Admin extends React.Component {
     })
       .then((res) => {
         if (res.status === 200) {
-          alert('Removed');
           this.setState((prevState) => {
             let workSamples = prevState.workSamples; // creating copy of state variable jasper
             var index = workSamples.findIndex(function(o) {
@@ -51,6 +50,7 @@ class Admin extends React.Component {
         } else {
           throw res.json();
         }
+        alert('Removed');
       })
       .catch((err) => {
         console.log(err.error);
@@ -66,7 +66,7 @@ class Admin extends React.Component {
             {this.state.workSamples.map((workSample, index) => {
               return (
                 <li key={index}>
-                  <Link to={`/edit/worksample/${workSample._id}`}>
+                  <Link to={`/admin/edit/worksample/${workSample._id}`}>
                     {`${index} ${workSample.title}`}
                   </Link>
                   <button
@@ -81,7 +81,7 @@ class Admin extends React.Component {
             })}
           </ul>
         )}
-        <Link to="/create/worksample/">
+        <Link to="/admin/create/worksample/">
           <div className="scroll-to-up-container">
             <i className="icon fas fa-plus" />
           </div>

@@ -10,6 +10,7 @@
     "react-cookies": "^0.1.1",
     "react-data-grid": "^6.1.0",
     "react-dom": "^16.8.6",
+    "react-html-parser": "^2.0.2",
     "react-loading-bar": "0.0.7",
     "react-masonry-component": "^6.2.1",
     "react-router-dom": "^5.0.1",

@@ -17,9 +17,9 @@ class App extends Component {
         <Switch>
           <Route path="/" exact component={Client} />
           <Route path="/itsme" component={Login} />
-          <Route path="/admin" component={withAuth(Admin)} />
-          <Route path="/edit/worksample/:id" component={withAuth(EditWorkSample)} />
-          <Route path="/create/worksample/" component={withAuth(CreateWorkSample)} />
+          <Route path="/admin" component={withAuth(Admin)} exact={true} />
+          <Route path="/admin/edit/worksample/:id" component={withAuth(EditWorkSample)} />
+          <Route path="/admin/create/worksample/" component={withAuth(CreateWorkSample)} />
         </Switch>
       </BrowserRouter>
     );

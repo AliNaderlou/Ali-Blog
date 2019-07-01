@@ -4,6 +4,8 @@ var router = express.Router()
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/AliBlog', {
   useNewUrlParser: true,
+  useFindAndModify:false,
+  useCreateIndex:true
 });
 const workSamples = mongoose.model('workSamples');
 const visitLogs = mongoose.model('visitlogs');

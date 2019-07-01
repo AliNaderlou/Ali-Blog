@@ -60,6 +60,7 @@ class EditWorkSample extends React.Component {
       .then((res) => {
         if (res.status === 200) {
           alert('Added');
+          this.props.history.push('/admin');
         } else {
           throw res.json();
         }
@@ -76,11 +77,13 @@ class EditWorkSample extends React.Component {
             name="title"
             value={this.state.workSample.title}
             onChange={this.handleInputChange}
+            placeholder="Title"
           />
           <textarea
             rows="10"
             cols="40"
             name="description"
+            placeholder="Some description..."
             onChange={this.handleInputChange}
             value={this.state.workSample.description}
           />
@@ -93,6 +96,7 @@ class EditWorkSample extends React.Component {
                   <input
                     value={item.src}
                     name="media"
+                    placeholder="/imagesOrvideos/..."
                     onChange={(e, indexItem = index) =>
                       this.handleInputChange(e, indexItem)
                     }

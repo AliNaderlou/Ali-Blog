@@ -29,11 +29,26 @@
     .work-description {
       padding: 0 0.45em;
     }
+    .work-description {
+      padding: 6px 0.45em;
+      color: #232323;
+      font-size: 0.95em;
+    }
+    .work-description::first-letter {
+      // font-family: "PT Serif";
+      //       font-size:2.9em;
+      // float: left;
+      // margin: 0 8px 0 0;
+      // color: var(--accent-color);
+      // font-style: italic;
+    }
+
     .title {
       margin: 0;
       width: 100%;
       color: white;
       box-sizing: border-box;
+      font-size: 0.85em;
       background: linear-gradient(
         195deg,
         var(--gradient-color-1),
@@ -53,7 +68,6 @@
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-
     box-sizing: border-box;
     button {
       margin: 0;
@@ -79,18 +93,23 @@
   height: 10px;
   width: 10px;
 }
-.aws-btn {
-  --slider-height-percentage: 60%;
+.aws {
+  --slider-height-percentage: 55%;
   --slider-transition-duration: 700ms;
   --organic-arrow-thickness: 6px;
   --organic-arrow-border-radius: 0px;
   --organic-arrow-height: 28px;
-  --organic-arrow-color: rgba(255, 255, 255, 0.5);
+  --organic-arrow-color: var(--primary-color);
   --control-button-width: 10%;
   --control-button-height: 25%;
   --control-button-background: transparent;
   --control-bullet-color: rgba(0, 0, 0, 0.7);
-  --control-bullet-active-color: rgba(255, 255, 255, 0.5);
-  --loader-bar-color: var(--accent-color);
-  --loader-bar-height: 6px;
+  --control-bullet-active-color: var(--accent-color);
+  --loader-bar-color: var(--primary-color);
+  --loader-bar-height: 7px;
+}
+
+.aws-sld__content > img,
+.aws-sld__content > video {
+  object-fit: fill;
 }

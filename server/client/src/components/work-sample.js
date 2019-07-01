@@ -2,19 +2,20 @@ import React from 'react';
 import AwesomeSlider from 'react-awesome-slider';
 import 'react-awesome-slider/dist/styles.css';
 import './styles/work-sample.scss';
+import ReactHtmlParser from 'react-html-parser';
 
 function WorkSample(props) {
   return (
     <div className="work-sample box-shadow" {...(props.isFirstChild===true) && {name:'FirstElement'}}>
       <section className="work-sample-info-container">
-        <AwesomeSlider className="aws-btn">
+        <AwesomeSlider className="aws">
           {props.medias.map((item) => <div key={props._id} data-src={item.src} />)}
         </AwesomeSlider>
         <div className="title">
           <h3>{props.title}</h3>
         </div>
         <div className="work-description">
-          <p>{props.description}</p>
+          <p>{ReactHtmlParser(props.description)}</p>
         </div>
       </section>
       {/* <footer>
