@@ -4,9 +4,11 @@
   "description": "My personal blog",
   "main": "index.js",
   "scripts": {
+    "postbuild": "react-snap",
     "server": "nodemon index.js",
     "client": "npm run start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "npm run start"
   },
   "author": "Ali Naderlou",
   "license": "ISC",

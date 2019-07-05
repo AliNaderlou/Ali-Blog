@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const withAuth = require('./middleware/authMiddleware');
-
+const path = require('path')
 const keys = require('./config/keys');
 // Import the library:
 const cors = require('cors');
@@ -26,6 +26,9 @@ app.use('/api/auth', authRoutes);
 app.get('/api/checkToken', withAuth, function(req, res) {
   res.sendStatus(200);
 });
-
+app.use(express.static(path.join(__dirname, 'client/build')))
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/client/build/index.html'))
+})
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
