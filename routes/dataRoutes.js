@@ -2,13 +2,8 @@ var express = require('express');
 var router = express.Router();
 const withAuth = require('../middleware/authMiddleware');
 
-const mongoose = require('mongoose');
+const mongoose = require('../db.js'); 
 
-mongoose.connect('mongodb://localhost:27017/AliBlog', {
-  useNewUrlParser: true,
-  useFindAndModify:false,
-  useCreateIndex:true
-});
 require('../models/WorkSample');
 require('../models/VisitLog');
 require('../models/User');

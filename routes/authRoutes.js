@@ -3,12 +3,7 @@ var router = express.Router();
 const jwt = require('jsonwebtoken');
 const keys = require('../config/keys');
 const secret = keys.tokenSecret;
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/AliBlog', {
-  useNewUrlParser: true,
-  useFindAndModify:false,
-  useCreateIndex:true
-});
+const mongoose = require('../db.js'); 
 const User = mongoose.model('users');
 router.post('/authenticate', function(req, res) {
   const { username, password } = req.body;
