@@ -26,9 +26,9 @@ app.use('/api/auth', authRoutes);
 app.get('/api/checkToken', withAuth, function(req, res) {
   res.sendStatus(200);
 });
-app.use(express.static(path.join(__dirname, 'client/build')))
+app.use(express.static(path.join(__dirname, '/public')))
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/client/build/index.html'))
+  res.sendFile(path.join(__dirname + '/public/index.html'))
 })
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
